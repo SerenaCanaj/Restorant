@@ -12,9 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 
 const productRoutes = require('./src/routes/productRoutes');
 const reviewRoutes = require('./src/routes/reviewRoutes');
+const orderRoutes = require('./src/routes/orderRoutes');
 
 app.use('/api/products', productRoutes);
 app.use('/api/reviews', reviewRoutes);
+app.use('/api/orders', orderRoutes);
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
