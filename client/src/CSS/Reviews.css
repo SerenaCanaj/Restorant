@@ -26,6 +26,41 @@ h2 {
   margin-top: 1rem;
 }
 
+.averageRating {
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  box-shadow: 10px 10px 25px -11px rgb(222, 0, 222);
+  max-width: 350px;
+  margin: 20px auto;
+}
+
+.averageRating h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2e8b57;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 10px;
+}
+
+.averageRating::before {
+  content: "🌟 Average Rating 🌟";
+  display: block;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .averageRating {
+    max-width: 90%;
+  }
+}
+
 .giveReview {
   background-color: #ffffff;
   padding: 2rem;
@@ -83,13 +118,18 @@ button.submit:hover {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .reviewCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #ffffff;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  box-shadow: 10px 10px 19px -3px rgba(0, 213, 255, 1);
 }
 
 .reviewCard h3 {
@@ -119,6 +159,7 @@ button.submit:hover {
 .buttonsReviews {
   display: flex;
   justify-content: space-around;
+  margin-top: 50px;
 }
 
 .homeButtonReviews {

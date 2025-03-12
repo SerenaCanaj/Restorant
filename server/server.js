@@ -9,7 +9,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-require("../server/routes/reviewRoutes")(app);
+require("./routes/reviewRoutes")(app);
+require("./routes/addProductRoutes")(app);
 
 require("./config/mongoose.config");
 

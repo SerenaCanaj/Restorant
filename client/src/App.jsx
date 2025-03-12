@@ -3,6 +3,7 @@ import WelcomePage from "./components/WelcomePage";
 import React from "react";
 import AboutUs from "./components/AboutUs";
 import Review from "./components/Reviews";
+import AddProduct from "./components/AddProduct";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<WelcomePage />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/reviews" element={<Review />} />
+          <Route path="/addProduct" element={<AddProduct />} />
         </Routes>
       </BrowserRouter>
     </>
