@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../components/Reviews.css";
+import "../CSS/Reviews.css";
+import { useNavigate } from "react-router-dom";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -8,12 +9,12 @@ const Reviews = () => {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     async function fetchReviews() {
       try {
-        const response = await axios.get(
-          "http://localhost:3001/restorant/reviews"
-        );
+        const response = await axios.get("http://localhost:8000/restorant/reviews");
         setReviews(response.data);
       } catch (error) {
         console.error("Error fetching reviews:", error);
@@ -25,7 +26,7 @@ const Reviews = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/restorant/reviews", {
+      await axios.post("http://localhost:8000/restorant/reviews", {
         name,
         rating,
         comment,
@@ -40,19 +41,14 @@ const Reviews = () => {
     <div className="reviewsPage">
       <form onSubmit={handleSubmit}>
         <h1 className="reviewsTitle">
-          Your <span className="feedback">Feedback</span> improves us!
+          Your <span className="feedback">Feedback</span> improves our service!
         </h1>
         <h2>Leave a Review</h2>
         <div className="giveReview">
           <div className="nameSection">
             <label>
               &darr; Name &darr;
-              <input
-                className="nameInput"
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
+              <input className="nameInput" type="text" value={name} onChange={(e) => setName(e.target.value)} />
             </label>
           </div>
           <div className="ratingSection">
@@ -85,16 +81,26 @@ const Reviews = () => {
         </div>
       </form>
       <h2>Reviews:</h2>
-      {reviews.map((review, index) => (
-        <div key={review.id || index}>
-          <h3>
-            Name: <br />
-            {review.name}
-          </h3>
-          <p>Rating: {review.rating}</p>
-          <p>Comment: {review.comment}</p>
-        </div>
-      ))}
+      <div className="reviewsGrid">
+        {reviews.map((review, index) => (
+          <div key={review.id || index} className="reviewCard">
+            <h3>
+              Name: <br />
+              {review.name}
+            </h3>
+            <p>Rating: {review.rating}</p>
+            <p>Comment: {review.comment}</p>
+          </div>
+        ))}
+      </div>
+      <div className="buttonsReviews">
+        <button className="homeButtonReviews" onClick={() => navigate("/")}>
+          Home
+        </button>
+        <button className="menuButtonReviews" onClick={() => navigate("/menu")}>
+          Menu
+        </button>
+      </div>
     </div>
   );
 };

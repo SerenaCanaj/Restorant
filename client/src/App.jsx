@@ -1,4 +1,3 @@
-import "../src/components/WelcomePage.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WelcomePage from "./components/WelcomePage";
 import React from "react";

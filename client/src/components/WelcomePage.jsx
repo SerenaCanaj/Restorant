@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/WelcomePage.css";
+import "../CSS/WelcomePage.css";
 import { Link, useNavigate } from "react-router-dom";
 import SAF from "../assets/SAF.png";
 

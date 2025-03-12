@@ -1,0 +1,144 @@
+.reviewsPage {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  padding: 2rem;
+  max-width: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reviewsTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.feedback {
+  color: #ff6f61;
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+  font-size: 1.75rem;
+  margin-top: 1rem;
+}
+
+.giveReview {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+}
+
+.nameSection,
+.ratingSection,
+.commentSection {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: #ff6f61;
+  outline: none;
+}
+
+button.submit {
+  background-color: #ff6f61;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+button.submit:hover {
+  background-color: #e55d50;
+}
+
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.reviewCard {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reviewCard h3 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.reviewCard p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.reviewCard p:first-child {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .reviewsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  button.submit {
+    width: auto;
+  }
+}
+
+.buttonsReviews {
+  display: flex;
+  justify-content: space-around;
+}
+
+.homeButtonReviews {
+  background-color: rgba(0, 255, 4, 0.443);
+  font-family: cursive;
+  padding: 0% 20px;
+  margin-top: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.811);
+  width: 160px;
+}
+
+.menuButtonReviews {
+  background-color: rgba(0, 55, 255, 0.751);
+  padding: 0px 20px;
+  margin-top: 10px;
+  border: none;
+  color: white;
+  font-size: 25px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.842);
+  font-family: cursive;
+}
